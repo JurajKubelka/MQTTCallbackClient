@@ -11,5 +11,5 @@ baseline: spec
 					repository: 'http://smalltalkhub.com/mc/SvenVanCaekenberghe/MQTT/main/' ];
 			package: #'MQTT-Async-Client' with: [
 				spec requires: #( 'MQTT' ). ];
-			group: 'default' with: #(client)
+			group: 'default' with: #(#'MQTT-Async-Client')
 	].
