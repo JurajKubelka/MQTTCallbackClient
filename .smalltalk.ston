@@ -1,0 +1,9 @@
+SmalltalkCISpec {
+  #loading : [
+    SCIMetacelloLoadSpec {
+      #baseline : 'MQTTCallbackClient',
+      #directory : 'repository',
+      #platforms : [ #pharo ]
+    }
+  ]
+}
