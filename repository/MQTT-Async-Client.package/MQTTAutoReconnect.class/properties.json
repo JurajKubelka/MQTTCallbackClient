@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "MQTTCommand",
+	"category" : "MQTT-Async-Client-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"delay",
+		"delayDuration",
+		"suspendBlock"
+	],
+	"name" : "MQTTAutoReconnect",
+	"type" : "normal"
+}

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "MQTTCommandTest",
+	"category" : "MQTT-Async-Client-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "MQTTAutoReconnectTest",
+	"type" : "normal"
+}

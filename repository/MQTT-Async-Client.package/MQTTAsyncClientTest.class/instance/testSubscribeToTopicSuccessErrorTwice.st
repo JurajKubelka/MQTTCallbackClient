@@ -1,0 +1,18 @@
+tests
+testSubscribeToTopicSuccessErrorTwice
+	client 
+		afterEachCycleBlock: [ :queue | self addToResultsAndSignal: #cycle ];
+		open;
+		subscribeToTopic: self topic
+			success: [ self addToResults: #subscribe ]
+			error: [ :exception | self addToResults: exception. exception pass ];
+		subscribeToTopic: self topic
+			success: [ self addToResults: #subscribe2 ]
+			error: [ :exception | self addToResults: exception. exception pass ].
+	self assertSemaphore: 4.
+	self assert: client size equals: 0.
+	self assert: results asArray equals: #(cycle subscribe cycle subscribe2 cycle cycle).
+	self assert: client subscriptions size equals: 1.
+	self assert: (client subscriptions first endsWith: self topic).
+	self assert: client isConnected.
+	self deny: client isActive.

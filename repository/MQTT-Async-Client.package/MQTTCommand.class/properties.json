@@ -1,0 +1,18 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "MQTT-Async-Client-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"actionBlock",
+		"responseBlock",
+		"errorBlock",
+		"isRepetitive",
+		"isOnHold",
+		"timeout"
+	],
+	"name" : "MQTTCommand",
+	"type" : "normal"
+}

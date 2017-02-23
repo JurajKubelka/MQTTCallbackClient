@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "TestCase",
+	"category" : "MQTT-Async-Client-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"client",
+		"command",
+		"results"
+	],
+	"name" : "MQTTCommandTest",
+	"type" : "normal"
+}
