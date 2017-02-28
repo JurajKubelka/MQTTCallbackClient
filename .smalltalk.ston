@@ -5,5 +5,8 @@ SmalltalkCISpec {
       #directory : 'repository',
       #platforms : [ #pharo ]
     }
-  ]
+  ],
+  #testing : {
+   #categories: [ 'MQTT-Async-Client-Tests' ]
+    }
 }
