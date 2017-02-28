@@ -18,7 +18,8 @@ install:
   - 7z x C:\smalltalkCI.zip -oC:\ -y > NULL
   # install mosquitto
   - ps: Start-FileDownload "http://www.eclipse.org/downloads/download.php?file=/mosquitto/binary/win32/mosquitto-1.4.11-install-win32.exe" "C:\mosquitto-win32.exe"
-  - C:\mosquitto-win32.exe /S /D=C:\mosquitto
+  - dir C:\
+  # - 'C:\mosquitto-win32.exe /S /D=C:\mosquitto'
 
 build: false
 
