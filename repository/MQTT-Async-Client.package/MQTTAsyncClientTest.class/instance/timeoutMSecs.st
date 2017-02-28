@@ -1,3 +1,0 @@
-accessing
-timeoutMSecs
-	^ 300

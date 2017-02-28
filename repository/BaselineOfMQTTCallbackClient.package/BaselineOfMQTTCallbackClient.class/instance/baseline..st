@@ -9,7 +9,11 @@ baseline: spec
 					className: #ConfigurationOfMQTT;
 					versionString: #'stable';
 					repository: 'http://smalltalkhub.com/mc/SvenVanCaekenberghe/MQTT/main/' ];
-			package: #'MQTT-Async-Client' with: [
-				spec requires: #( 'MQTT' ). ];
-			group: 'default' with: #(#'MQTT-Async-Client')
+			package: #'MQTT-CallbackClient' with: [
+				spec requires: #( #'MQTT' ). ];
+			package: #'MQTT-CallbackClientTests' with: [
+				spec requires: #( #'MQTT-CallbackClient' ). ];
+			group: 'tests' with: #( #'MQTT-CallbackClientTests' );
+			group: 'client' with: #( #'MQTT-CallbackClient' );
+			group: 'default' with: #( client tests )
 	].

@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "MQTT-CallbackClient-Client",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"mqttClient",
+		"queue"
+	],
+	"name" : "MQTTCallbackClient",
+	"type" : "normal"
+}

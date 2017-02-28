@@ -1,0 +1,19 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "MQTT-CallbackClient-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"queue",
+		"mqttClient",
+		"mutex",
+		"process",
+		"permission",
+		"afterEachCycleBlock",
+		"reopen"
+	],
+	"name" : "MQTTCommandQueue",
+	"type" : "normal"
+}
