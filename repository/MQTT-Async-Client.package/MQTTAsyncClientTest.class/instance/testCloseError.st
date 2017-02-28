@@ -5,8 +5,8 @@ testCloseError
 		open;
 		close: [ self addToResults: #close ] 
 		error: [ :exception | self addToResults: exception ].
-	self assertSemaphore: 3.
+	self assertSemaphore: 2.
 	self assert: client size equals: 0.
-	self assert: results asArray equals: #(cycle close cycle cycle).
+	self assert: results asArray equals: #(cycle close cycle).
 	self deny: client isConnected.
 	self deny: client isActive.

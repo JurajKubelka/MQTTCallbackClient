@@ -4,7 +4,8 @@ executeCommand
 	command := self nextOrNil.
 	command ifNil: [ ^ self deactivate ].
 	shouldDeactivate := false.
-	[ [ command executeOn: self mqttClient ]	
+	[ [ command executeOn: self mqttClient.
+		self isConnected ifFalse: [ shouldDeactivate := true ] ]	
 		on: NetworkError, PrimitiveFailed
 		do: [ :exception | 
 			command error: exception client: self mqttClient.
