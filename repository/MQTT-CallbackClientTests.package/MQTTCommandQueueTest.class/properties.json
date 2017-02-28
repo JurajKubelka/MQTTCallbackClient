@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "TestCase",
+	"category" : "MQTT-CallbackClientTests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"command",
+		"results",
+		"mqttClient",
+		"queue"
+	],
+	"name" : "MQTTCommandQueueTest",
+	"type" : "normal"
+}
