@@ -19,7 +19,7 @@ install:
   # mosquitto dependences
   - ps: Start-FileDownload "http://slproweb.com/download/Win32OpenSSL_Light-1_1_0e.exe" "C:\win32OpenSSL.exe"
   - cmd: 'C:\win32OpenSSL.exe /VERYSILENT /SP- /LOG="C:\win32OpenSSL.log" /DIR="%MOSQUITTO_DIR%"'
-  - ps: Start-FileDownload "ftp://sourceware.org/pub/pthreads-win32/pthreads-w32-2-9-1-release.zip" "C:\pthreads.zip"
+  - ps: Invoke-WebRequest -Uri "ftp://sourceware.org/pub/pthreads-win32/pthreads-w32-2-9-1-release.zip" -OutFile "C:\pthreads.zip"
   - cmd: '7z x C:\pthreads.zip -o%MOSQUITTO_DIR% -y > NULL'
   # install mosquitto
   - ps: Start-FileDownload "http://www.eclipse.org/downloads/download.php?file=/mosquitto/binary/win32/mosquitto-1.4.11-install-win32.exe&mirror_id=1" "C:\mosquitto-win32.exe"
