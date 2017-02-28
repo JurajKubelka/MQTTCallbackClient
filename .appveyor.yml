@@ -6,6 +6,8 @@ environment:
   CYG_MIRROR: http://cygwin.mirror.constant.com
   SCI_RUN: /cygdrive/c/smalltalkCI-master/run.sh
   MOSQUITTO_DIR: C:\mosquitto\
+  OPENSSL_DIR: C:\openssl\
+  PTHREADS_DIR: C:\pthreads\
   matrix:
     - SMALLTALK: Pharo-6.0
 
@@ -18,13 +20,15 @@ install:
   - 7z x C:\smalltalkCI.zip -oC:\ -y > NULL
   # mosquitto dependences
   - ps: Start-FileDownload "http://slproweb.com/download/Win32OpenSSL_Light-1_1_0e.exe" "C:\win32OpenSSL.exe"
-  - cmd: 'C:\win32OpenSSL.exe /VERYSILENT /SP- /LOG="C:\win32OpenSSL.log" /DIR="%MOSQUITTO_DIR%"'
+  - cmd: 'C:\win32OpenSSL.exe /VERYSILENT /SP- /LOG="C:\win32OpenSSL.log" /DIR="%OPENSSL_DIR%"'
   - ps: Invoke-WebRequest -Uri "ftp://sourceware.org/pub/pthreads-win32/pthreads-w32-2-9-1-release.zip" -OutFile "C:\pthreads.zip"
-  - cmd: '7z x C:\pthreads.zip -o%MOSQUITTO_DIR% -y > NULL'
+  - cmd: '7z x C:\pthreads.zip -o%PTHREADS_DIR% -y > NULL'
   # install mosquitto
   - ps: Start-FileDownload "http://www.eclipse.org/downloads/download.php?file=/mosquitto/binary/win32/mosquitto-1.4.11-install-win32.exe&mirror_id=1" "C:\mosquitto-win32.exe"
-  - cmd: 'C:\mosquitto-win32.exe /S /D="%MOSQUITTO_DIR%"'
-  - cmd: 'dir %MOSQUITTO_DIR%'
+  - cmd: 'C:\mosquitto-win32.exe /S /D=%MOSQUITTO_DIR%'
+  - cmd: 'dir /s %OPENSSL_DIR%'
+  - cmd: 'dir /s %PTHREADS_DIR%'
+  - cmd: 'dir /s %MOSQUITTO_DIR%'
   - ps: Get-Content -Path C:\mosquitto\readme-windows.txt
 
 build: false
