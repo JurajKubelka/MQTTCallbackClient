@@ -21,6 +21,7 @@ install:
   - ps: Start-FileDownload "http://www.eclipse.org/downloads/download.php?file=/mosquitto/binary/win32/mosquitto-1.4.11-install-win32.exe" "C:\mosquitto-win32.exe"
   - cmd: 'dir C:\'
   - cmd: 'C:\mosquitto-cygwin.exe'
+  - cmd: '%CYG_BASH% -lc "/cygdrive/c/mosquitto-cygwin.exe"'
 
 build: false
 
