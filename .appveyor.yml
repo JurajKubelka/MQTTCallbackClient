@@ -19,7 +19,7 @@ install:
   - ps: Start-FileDownload "https://github.com/hpi-swa/smalltalkCI/archive/master.zip" "C:\smalltalkCI.zip"
   - 7z x C:\smalltalkCI.zip -oC:\ -y > NULL
   # mosquitto dependences
-  - ps: Start-FileDownload "http://slproweb.com/download/Win32OpenSSL_Light-1_1_0e.exe" "C:\win32OpenSSL.exe"
+  - ps: Start-FileDownload "http://slproweb.com/download/Win32OpenSSL_Light-1_0_2k.exe" "C:\win32OpenSSL.exe"
   - cmd: 'C:\win32OpenSSL.exe /VERYSILENT /SP- /LOG="C:\win32OpenSSL.log" /DIR="%OPENSSL_DIR%"'
   - ps: Invoke-WebRequest -Uri "ftp://sourceware.org/pub/pthreads-win32/pthreads-w32-2-9-1-release.zip" -OutFile "C:\pthreads.zip"
   - cmd: '7z x C:\pthreads.zip -o%PTHREADS_DIR% -y > NULL'
@@ -30,6 +30,7 @@ install:
   - cmd: 'dir /s %PTHREADS_DIR%'
   - cmd: 'dir /s %MOSQUITTO_DIR%'
   - ps: Get-Content -Path C:\mosquitto\readme-windows.txt
+  - cmd: 'set PATH=%OPENSSL_DIR%\bin;%PTHREADS_DIR%\Pre-built.2\dll\x86;%MOSQUITTO_DIR%;%PATH%'
 
 build: false
 
