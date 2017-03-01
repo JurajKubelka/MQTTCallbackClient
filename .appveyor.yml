@@ -35,6 +35,7 @@ install:
   - cmd: 'net start Mosquitto'
   - cmd: 'netstat -an'
   - cmd: 'mosquitto_pub.exe -h localhost -p 1883 -t abc -m "checking mosquitto connection"'
+  - cmd: '%CYG_BASH% -lc "which curl wget unzip rm mv"'
 
 build: false
 
