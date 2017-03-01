@@ -27,10 +27,10 @@ install:
   # install mosquitto
   - ps: Start-FileDownload "http://www.eclipse.org/downloads/download.php?file=/mosquitto/binary/win32/mosquitto-1.4.11-install-win32.exe&mirror_id=1" "C:\mosquitto-win32.exe"
   - cmd: 'C:\mosquitto-win32.exe /S /D=%MOSQUITTO_DIR%'
-  - cmd: 'dir /s %OPENSSL_DIR%'
-  - cmd: 'dir /s %PTHREADS_DIR%'
-  - cmd: 'dir /s %MOSQUITTO_DIR%'
-  - ps: Get-Content -Path C:\mosquitto\readme-windows.txt
+  # cmd: 'dir /s %OPENSSL_DIR%'
+  # cmd: 'dir /s %PTHREADS_DIR%'
+  # cmd: 'dir /s %MOSQUITTO_DIR%'
+  # ps: Get-Content -Path C:\mosquitto\readme-windows.txt
   - cmd: 'set PATH=%OPENSSL_DIR%\bin;%PTHREADS_DIR%\Pre-built.2\dll\x86;%MOSQUITTO_DIR%;%PATH%'
   - cmd: 'net start Mosquitto'
   - cmd: 'netstat -an'
