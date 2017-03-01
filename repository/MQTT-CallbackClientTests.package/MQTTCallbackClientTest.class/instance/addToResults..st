@@ -7,5 +7,5 @@ addToResults: object
 			trace: object;
 			trace: ' for ';
 			trace: self className;
-			trace: '>>';
+			trace: '>>#';
 			traceCr: self selector ]

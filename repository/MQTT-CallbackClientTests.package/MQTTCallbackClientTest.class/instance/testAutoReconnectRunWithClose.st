@@ -10,7 +10,8 @@ testAutoReconnectRunWithClose
 			suspend: [ :duration :time :command | 
 				self addToResults: #suspend.
 				duration > 0 seconds ifTrue: [
-				ShouldNotImplement signal: 'Should not happen' ] ];
+					self logTestCase.
+					ShouldNotImplement signal: 'Should not happen' ] ];
 		open: [ self addToResults: #open. ] 
 			error: [ :exception | self addToResults: exception. exception pass ];
 		runWith: [ :packet | packet isApplicationMessage ] 

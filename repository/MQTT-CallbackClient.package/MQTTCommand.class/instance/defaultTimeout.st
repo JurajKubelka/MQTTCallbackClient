@@ -1,4 +1,4 @@
 accessing
 defaultTimeout
 	"in seconds"
-	^ 5
+	^ 10

@@ -8,6 +8,7 @@ testAutoReconnectClose
 		suspend: [ :duration :time :command | 
 			self addToResults: #suspend.
 			duration > 0 seconds ifTrue: [
+				self logTestCase.
 				ShouldNotImplement signal: 'Should not happen' ] ];
 		open: [ self addToResults: #open. ] 
 		error: [ :exception | self addToResults: exception. exception pass ];

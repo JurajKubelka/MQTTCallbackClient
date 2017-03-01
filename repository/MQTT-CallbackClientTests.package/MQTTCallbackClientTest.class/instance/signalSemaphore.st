@@ -5,5 +5,5 @@ signalSemaphore
 		ifNil: [ self 
 			crTrace: 'CRITICAL ERROR: semaphore is nil for ';
 			trace: self className;
-			trace: '>>';
+			trace: '>>#';
 			traceCr: self selector ]
