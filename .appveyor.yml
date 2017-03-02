@@ -15,6 +15,7 @@ platform:
   - x86
 
 install:
+  - '%CYG_EXE% -qnNdO -R "%CYG_ROOT%" -s "%CYG_MIRROR%" -l "%CYG_CACHE%" -g --upgrade-also'
   - '%CYG_EXE% -qnNdO -R "%CYG_ROOT%" -s "%CYG_MIRROR%" -l "%CYG_CACHE%" -P unzip'
   - ps: Start-FileDownload "https://github.com/hpi-swa/smalltalkCI/archive/master.zip" "C:\smalltalkCI.zip"
   - 7z x C:\smalltalkCI.zip -oC:\ -y > NULL
@@ -33,9 +34,9 @@ install:
   # ps: Get-Content -Path C:\mosquitto\readme-windows.txt
   - cmd: 'set PATH=%OPENSSL_DIR%\bin;%PTHREADS_DIR%\Pre-built.2\dll\x86;%MOSQUITTO_DIR%;%PATH%'
   - cmd: 'net start Mosquitto'
-  - cmd: 'netstat -an'
+  # cmd: 'netstat -an'
   - cmd: 'mosquitto_pub.exe -h localhost -p 1883 -t abc -m "checking mosquitto connection"'
-  - cmd: '%CYG_BASH% -lc "which curl wget unzip rm mv"'
+  # cmd: '%CYG_BASH% -lc "which curl wget unzip rm mv"'
 
 build: false
 
