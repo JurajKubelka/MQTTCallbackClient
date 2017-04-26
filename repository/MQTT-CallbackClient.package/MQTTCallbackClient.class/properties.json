@@ -7,7 +7,8 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"mqttClient",
-		"queue"
+		"queue",
+		"maxReconnectionDelay"
 	],
 	"name" : "MQTTCallbackClient",
 	"type" : "normal"

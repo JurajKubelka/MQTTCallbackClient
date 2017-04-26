@@ -1,0 +1,3 @@
+accessing
+maxReconnectionDelay
+	^ maxReconnectionDelay

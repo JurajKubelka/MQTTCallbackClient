@@ -8,7 +8,8 @@
 	"instvars" : [
 		"delay",
 		"delayDuration",
-		"suspendBlock"
+		"suspendBlock",
+		"maxDelayDuration"
 	],
 	"name" : "MQTTAutoReconnect",
 	"type" : "normal"
