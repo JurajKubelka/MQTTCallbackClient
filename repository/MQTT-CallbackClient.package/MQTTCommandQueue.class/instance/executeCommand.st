@@ -6,7 +6,7 @@ executeCommand
 	shouldDeactivate := false.
 	[ [ command executeOn: self mqttClient.
 		self isConnected ifFalse: [ shouldDeactivate := true ] ]	
-		on: NetworkError, PrimitiveFailed
+		on: Error
 		do: [ :exception | 
 			command error: exception client: self mqttClient.
 			shouldDeactivate := self prepareReopen ].
